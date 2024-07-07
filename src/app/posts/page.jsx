@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const getPost = async()=>{
@@ -12,12 +13,15 @@ const PostPages = async() => {
     return (
         <div>
             <h2 className='text-6xl mb-6'>All post</h2>
-            {
-                posts.map(post=><div className='grid grid-cols-4 border-2 p-6 ' key={post.id}>
+           <div className="grid grid-cols-4">
+           {
+                posts.map(post=><div className=' border-2 p-6 ' key={post.id}>
                     <h2>{post.title}</h2>
                     <h2>{post.body}</h2>
+                    <button className="btn bg-red-500 text-white"><Link href={`/posts/${post.id}`}>View details</Link></button>
                 </div>)
             }
+           </div>
         </div>
     );
 };
