@@ -1,6 +1,10 @@
 import React from 'react';
 import Meals from './Meals';
 
+export const metadata = {
+    title: "meals page",
+    description: "all about meals page",
+  };
 const MealsPage = () => {
    
     return (
