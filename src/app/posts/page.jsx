@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-
+import { Montserrat } from 'next/font/google';
+const montserrat =Montserrat({weight:['200','300','400','600'],subsets:['cyrillic']})
 export const metadata = {
     title: {
         absolute : "Posts"
@@ -19,7 +20,7 @@ const PostPages = async() => {
     //console.log(posts)
     return (
         <div>
-            <h2 className='text-6xl mb-6'>All post</h2>
+            <h2 className={`${montserrat.className} text-6xl mb-6`}>All post</h2>
            <div className="grid grid-cols-4">
            {
                 posts.map(post=><div className=' border-2 p-6 ' key={post.id}>
